@@ -7,8 +7,9 @@ export default function CardContainer(props){
     const showDateCards = () => {
         return props.dateCards.dateCards.map(dateCard => { 
             return <Card
-             username={dateCard.username}
-             
+                username={dateCard.username}
+                city={dateCard.city}
+
              /> 
         })
     }
