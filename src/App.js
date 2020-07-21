@@ -28,7 +28,7 @@ class App extends Component {
       this.setState({
         dateCards: [...this.state.dateCards, newDateCard]
       })
-      fetch(riskyURL,{
+      fetch(riskyURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -37,16 +37,30 @@ class App extends Component {
       })
   }
 
-  // deleteTodo = (id) => {
-    
-  // }
+  deleteDateCard = (id) => {
+    let filtered = this.state.dateCards.filter(dateCard => dateCard.id !== id)
+    this.setState({
+      dateCards: filtered
+    })
+    fetch(riskyURL + "/" + id, { method:"DELETE" })
+  }
+
+  addToFavorites = (id) => {
+    console.log('added to favorite')
+  }
 
   render(){
     return (
       <div className="App">
         <h1 id="title">Risky Business</h1>
-          {/* <Form /> */}
-          <CardContainer dateCards={this.state}/>
+        <h2> A dating app with no Pictures</h2>
+        <h2>If you fall in love it's not our fault!</h2>
+          {/* <Form addDate={this.addDateCardUser}/> */}
+          <CardContainer
+            dateCards={this.state}
+            deleteCard={this.deleteDateCard}
+            addFavorite={this.addToFavorites}
+            />
       </div>
     );
   }
