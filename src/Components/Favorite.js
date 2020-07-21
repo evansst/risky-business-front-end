@@ -1,5 +1,13 @@
 import React from 'react'
 
 export default function Favorite(props){
-    return console.log(props)
+    return(
+        <div className="favorite-date">
+            <h1>Favorites</h1>
+                <C
+        
+        
+        </div>
+
+    )
 }

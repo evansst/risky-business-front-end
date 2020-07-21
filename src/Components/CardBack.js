@@ -7,11 +7,6 @@ export default function CardBack (props) {
         <div className="card-back">
             <h2>{props.interests}</h2>
         
-
-
-
-
-
         </div>
 
     )

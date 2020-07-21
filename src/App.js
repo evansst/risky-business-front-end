@@ -55,6 +55,7 @@ class App extends Component {
         <h1 id="title">Risky Business</h1>
         <h2> A dating app with no Pictures</h2>
         <h2>If you fall in love it's not our fault!</h2>
+        <Favorite />
           {/* <Form addDate={this.addDateCardUser}/> */}
           <CardContainer
             dateCards={this.state}
