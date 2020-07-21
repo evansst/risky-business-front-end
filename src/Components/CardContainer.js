@@ -13,8 +13,8 @@ export default function CardContainer(props){
                         key={dateCard.id} {...dateCard}
                         username={dateCard.username}
                         city={dateCard.city}
-                        deleteCard={dateCard.deleteDateCard}
-                        addFavorite={dateCard.addToFavorites}
+                        deleteDateCard={props.deleteDateCard}
+                        addToFavorites={props.addToFavorites}
                     /> 
                 </div>
             )

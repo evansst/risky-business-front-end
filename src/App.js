@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import CardContainer from './Components/CardContainer'
 import Form from './Components/Form'
-
+import Favorite from './Components/Favorite'
+import FavoriteCard from './Components/FavoriteCard'
 const riskyURL = "http://localhost:3000/users"
 
 
@@ -11,7 +12,8 @@ const riskyURL = "http://localhost:3000/users"
 class App extends Component {
   
   state = {
-    dateCards: []
+    dateCards: [],
+    favorite: {}
   }
   
   componentDidMount() {
@@ -38,29 +40,34 @@ class App extends Component {
   }
 
   deleteDateCard = (id) => {
+    console.log(id)
     let filtered = this.state.dateCards.filter(dateCard => dateCard.id !== id)
     this.setState({
       dateCards: filtered
     })
-    fetch(riskyURL + "/" + id, { method:"DELETE" })
+    fetch((riskyURL + "/" + id), { method:"DELETE" })
   }
 
-  addToFavorites = (id) => {
-    console.log('added to favorite')
+  addToFavorites = (card) => {
+    console.log(card)
+    this.setState({favorite: card})
   }
 
   render(){
     return (
       <div className="App">
-        <h1 id="title">Risky Business</h1>
-        <h2> A dating app with no Pictures</h2>
-        <h2>If you fall in love it's not our fault!</h2>
-        <Favorite />
+        <div id="title">
+          <h1>Risky Business</h1>
+          <h2>A dating app with NO PICTURES!!</h2>
+          <h2>If you fall in love, it's not our fault!</h2>
+        </div>
+          <Favorite favorite={this.state.favorite}/>
+          <FavoriteCard addToFavorites={this.addToFavorites}/>
           {/* <Form addDate={this.addDateCardUser}/> */}
           <CardContainer
             dateCards={this.state}
-            deleteCard={this.deleteDateCard}
-            addFavorite={this.addToFavorites}
+            deleteDateCard={this.deleteDateCard}
+            addToFavorites={this.addToFavorites}
             />
       </div>
     );

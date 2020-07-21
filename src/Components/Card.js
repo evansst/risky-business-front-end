@@ -1,6 +1,6 @@
 import React from 'react'
 import CardBack from './CardBack'
-
+import Favorite from './Favorite'
 
 export default function Card(props) {
     console.log(props)
@@ -10,11 +10,15 @@ export default function Card(props) {
             <div className='card-front'>
                 <h2>{props.username}</h2>
                 <br/>
-                <h4>{props.city}</h4>
-                <button onClick={props.addToFavorites}>Add to Favorites</button>
-                <button onClick={props.deleteDateCard}>Remove from Favorites</button>
+                <h4> {props.city}</h4>
             </div>
-            <CardBack interests={props.interests} />
+            <CardBack
+                key={props.id} {...props}
+                name={props.name}
+                interests={props.interests}
+                deleteDateCard={props.deleteDateCard}
+                addToFavorites={props.addToFavorites} 
+            />
         </div>
     )
 

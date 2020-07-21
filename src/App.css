@@ -47,8 +47,43 @@ table {
 	border-spacing: 0;
 }
 
+/* MEYER RESET END */
+
+body {
+  background-image: url(https://s3-prod.adage.com/s3fs-public/styles/width_1024/public/20200203_Domino%27s-screen-3x2.jpg);
+
+}
+
+#title {
+  background: white;
+  opacity: 0.5;
+  width: 100%;
+  align-content: center;
+  /* margin-left: 468px; */
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: 800;
+}
+
 .App {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#title > h1 {
+  font-size: 40px;
+  padding: 10px;
+}
+#title > h2 {
+  font-size: 28px;
+  margin-bottom: 20px
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 28px;
 }
 
 .card-list {
@@ -56,6 +91,7 @@ table {
   flex-direction: row;
   flex-wrap: wrap;
   margin: 5px;
+  border-radius: 8px;
 }
 
 .whole-card {
@@ -67,8 +103,8 @@ table {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px;
+  border-radius: 8px;
 }
 
 .user-card {
@@ -78,6 +114,7 @@ table {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  border-radius: 8px;
 }
 
 .whole-card:hover .user-card {
@@ -93,12 +130,38 @@ table {
 }
 
 .card-front{
-  background-color: #bbb;
-  color: black;
+  background-image: url(./raul-najera-MggK54YixfU-unsplash.jpg);
+  background-size: 100%;
+  color: white;
+  font-weight: 900;
+  border-radius: 8px;
+}
+
+
+.card-front > h2 {
+  margin-top: 5px;
+}
+
+.card-front > h4 {
+  margin-top: 40%;
+  font-size: 20px;
 }
 
 .card-back {
-  background-color: dodgerblue;
-  color: white;
+  background-color: #bbb;
+  color: black;
   transform: rotateY(180deg);
+  border-radius: 8px;
+
+}
+
+.card-back > h2 {
+  margin-top: 20%;
+  align-content: center;
+  border-radius: 8px;
+}
+
+.card-back > h4 {
+  font-size: 20px;
+  border-radius: 8px;
 }
