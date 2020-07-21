@@ -1,5 +1,13 @@
 import React from 'react'
 
-export default function Card(props){
+export default function Card(props) {
     console.log(props)
+
+    return(
+        <div className="user-card">
+            <h2>{props.username}</h2>
+        </div>
+    )
+
+
 }

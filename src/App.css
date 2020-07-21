@@ -50,3 +50,19 @@ table {
 .App {
   text-align: center;
 }
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.user-card {
+  display: flex;
+  flex-direction: inherit;
+  flex-wrap: wrap;
+  width: 150px;
+  border: solid black 1px;
+  margin: 5px;
+}

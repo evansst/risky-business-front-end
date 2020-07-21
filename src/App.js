@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CardContainer from './Components/CardContainer'
 import Form from './Components/Form'
 
-const riskyURL = ""
+const riskyURL = "http://localhost:3000/users"
 
 
 
@@ -12,11 +11,11 @@ const riskyURL = ""
 class App extends Component {
   
   state = {
-    dateCards:[]
+    dateCards: []
   }
   
   componentDidMount() {
-    // this.getDateCards()
+    this.getDateCards()
   }
 
   getDateCards = () => {
@@ -46,8 +45,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1 id="title">Risky Business</h1>
-          {/* <Form />
-          <CardContainer /> */}
+          {/* <Form /> */}
+          <CardContainer dateCards={this.state}/>
       </div>
     );
   }
